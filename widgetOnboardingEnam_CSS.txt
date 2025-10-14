@@ -1,0 +1,2095 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Full Screen Widget Layout */
+.widget-container {
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Section - Zoho Style */
+.widget-header {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 5px;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.widget-header h1 {
+    font-size: 28px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.widget-header p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Progress Container - Updated for Zoho Style */
+.progress-container {
+    background: #1976d2;
+    padding: 0;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #e3f0fa;
+    /* Match your header background */
+    /* box-shadow: 0 2px 8px rgba(18, 78, 144, 0.06); */
+}
+
+/* Step Indicators - Tab Style */
+.step-indicators {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    background: #1976d2;
+    overflow-x: auto;
+}
+
+.step-indicator {
+    background: none;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 15px 25px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    flex: 1;
+    text-align: center;
+    min-width: 150px;
+}
+
+.step-indicator:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.step-indicator:hover span {
+    color: white;
+}
+
+.step-indicator:active {
+    transform: translateY(0);
+}
+
+.step-indicator.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-bottom-color: #ffeb3b;
+    font-weight: 600;
+}
+
+.step-indicator.completed {
+    background: #1976d2;
+}
+
+.step-indicator::before {
+    display: none;
+    /* Hide step numbers */
+}
+
+.step-indicator span {
+    color: inherit;
+    font-size: inherit;
+}
+
+/* Hide old progress bar */
+.progress-bar {
+    display: none;
+}
+
+/* Form Container */
+.form-container {
+    flex: 1;
+    background: white;
+    padding: 0;
+    overflow-y: auto;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Step Title */
+.step-title {
+    background: #000000;
+    padding: 20px 30px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+Section Groups .section-group {
+    background: white;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Layout for Form Fields */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+    /* Ensure equal width for all columns */
+}
+
+.form-table tbody {
+    display: table-row-group;
+}
+
+.form-table tr {
+    display: table-row;
+    border-bottom: 1px solid #e0e0e0;
+    /* Add subtle row separation */
+}
+
+.form-table tr:last-child {
+    border-bottom: none;
+}
+
+.form-table td {
+    display: table-cell;
+    padding: 15px 20px;
+    vertical-align: top;
+    border-right: 1px solid #e0e0e0;
+    /* Add subtle column separation */
+    width: 33.33%;
+    /* Equal width for all columns */
+}
+
+.form-table td:last-child {
+    border-right: none;
+}
+
+/* Handle empty cells by hiding them */
+.form-table td:empty {
+    display: none;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #124e90;
+    box-shadow: 0 0 0 3px rgba(18, 78, 144, 0.1);
+}
+
+/* Required field indicator */
+.form-group input[required]::after,
+.form-group select[required]::after {
+    content: '*';
+    color: #dc3545;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-table td {
+        display: block;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 15px;
+    }
+
+    .form-table td:last-child {
+        border-bottom: none;
+    }
+
+    .form-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background: #fafbfc;
+    }
+
+    .form-table tr:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Hide old progress bar */
+.progress-bar {
+    display: none;
+}
+
+/* Form Container */
+.form-container {
+    flex: 1;
+    background: white;
+    padding: 0;
+    overflow-y: auto;
+}
+
+/* Form Steps */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+/* Step Title */
+.step-title {
+    background: #000000;
+    padding: 20px 30px;
+    margin: 0;
+    font-size: 20px;
+    font-weight: 500;
+    color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+/* Section Groups */
+.section-group {
+    background: white;
+    margin-bottom: 30px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Layout for Form Fields */
+.form-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+    table-layout: fixed;
+    /* Ensure equal width for all columns */
+}
+
+.form-table tbody {
+    display: table-row-group;
+}
+
+.form-table tr {
+    display: table-row;
+    border-bottom: 1px solid #e0e0e0;
+    /* Add subtle row separation */
+}
+
+.form-table tr:last-child {
+    border-bottom: none;
+}
+
+.form-table td {
+    display: table-cell;
+    padding: 15px 20px;
+    vertical-align: top;
+    border-right: 1px solid #e0e0e0;
+    /* Add subtle column separation */
+    width: 33.33%;
+    /* Equal width for all columns */
+}
+
+.form-table td:last-child {
+    border-right: none;
+}
+
+/* Handle empty cells by hiding them */
+.form-table td:empty {
+    display: none;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin: 0;
+    display: block;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #124e90;
+    box-shadow: 0 0 0 3px rgba(18, 78, 144, 0.1);
+}
+
+/* Required field indicator */
+.form-group input[required]::after,
+.form-group select[required]::after {
+    content: '*';
+    color: #dc3545;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-table td {
+        display: block;
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 10px 15px;
+    }
+
+    .form-table td:last-child {
+        border-bottom: none;
+    }
+
+    .form-table tr {
+        display: block;
+        margin-bottom: 20px;
+        border: 1px solid #e0e0e0;
+        border-radius: 8px;
+        background: #fafbfc;
+    }
+
+    .form-table tr:last-child {
+        margin-bottom: 0;
+    }
+}
+
+/* Alert styling within sections */
+.section-group .alert {
+    margin: 15px 20px;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.alert-info {
+    background-color: #e3f2fd;
+    color: #0d47a1;
+    border: 1px solid #bbdefb;
+}
+
+/* File input styling */
+input[type="file"] {
+    padding: 8px 0;
+    border: 1px dashed #d1d3e2;
+    background-color: #f8f9fa;
+}
+
+input[type="file"]:focus {
+    border-color: #1976d2;
+    background-color: #fff;
+}
+
+/* Button Container Styling */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 40px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-top: 2px solid #dee2e6;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.05);
+    margin-top: 40px;
+    border-radius: 0 0 12px 12px;
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+.button-group>div {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* Enhanced Button Base Styling */
+.btn {
+    padding: 16px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 140px;
+    min-height: 54px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border: 2px solid transparent;
+}
+
+/* Button Hover Effect */
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s;
+    z-index: 1;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.btn:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Primary Button - Next */
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: white;
+    border-color: #0056b3;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #004085 100%);
+    border-color: #004085;
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Secondary Button - Previous */
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+    color: white;
+    border-color: #545b62;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #545b62 0%, #3d4349 100%);
+    border-color: #3d4349;
+}
+
+.btn-secondary:focus {
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.25);
+}
+
+/* Success Button - Submit */
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    color: white;
+    border-color: #1e7e34;
+    min-width: 160px;
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #1e7e34 0%, #155724 100%);
+    border-color: #155724;
+}
+
+.btn-success:focus {
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.25);
+}
+
+/* Outline Button - Save as Draft */
+.btn-outline {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #6c757d;
+    border: 2px solid #6c757d;
+    min-width: 160px;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #6c757d 0%, #545b62 100%);
+    color: white;
+    border-color: #545b62;
+}
+
+.btn-outline:focus {
+    box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.25);
+}
+
+/* Button Icons (Optional - you can add icons) */
+.btn i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* Disabled Button State */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1) !important;
+}
+
+.btn:disabled:hover,
+.btn.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hidden Button State */
+.btn.hidden {
+    display: none !important;
+}
+
+/* Loading State for Buttons */
+.btn.loading {
+    position: relative;
+    color: transparent;
+    pointer-events: none;
+}
+
+.btn.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ffffff;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Responsive Design for Buttons */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    .button-group>div {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn {
+        width: 100%;
+        min-width: auto;
+        margin: 0;
+    }
+
+    .button-group>div:first-child {
+        order: 2;
+    }
+
+    .button-group>div:last-child {
+        order: 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn {
+        padding: 14px 24px;
+        font-size: 14px;
+        min-height: 48px;
+    }
+
+    .button-group {
+        padding: 15px;
+    }
+}
+
+/* Special styling for button text */
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* Button focus states for accessibility */
+.btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Pulse animation for Submit button */
+.btn-success.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Print Styles */
+@media print {
+
+    .widget-header,
+    .step-indicators,
+    .button-group,
+    .alert {
+        display: none;
+    }
+
+    .form-step {
+        display: block !important;
+        page-break-after: always;
+    }
+
+    .form-step:last-child {
+        page-break-after: auto;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border: 1px solid #000 !important;
+        background: white !important;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .widget-header {
+        background: #000;
+        color: #fff;
+    }
+
+    .step-indicators {
+        background: #000;
+    }
+
+    .step-indicator {
+        border: 1px solid #fff;
+    }
+
+    .form-group label {
+        background: #f0f0f0;
+        color: #000;
+        border: 1px solid #000;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        border: 2px solid #000 !important;
+        background: #fff !important;
+        color: #000 !important;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+
+    .widget-container {
+        background: #2d2d2d;
+    }
+
+    .widget-header {
+        background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+        color: white;
+    }
+
+    .step-title {
+        background: #374151;
+        color: #e0e0e0;
+    }
+
+    .section-title {
+        background: #1e40af;
+        color: white;
+    }
+
+    .form-group label {
+        background: #374151;
+        color: #e0e0e0;
+        border-color: #4b5563;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        background: #1f2937;
+        color: #e0e0e0;
+        border-color: #4b5563;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        background: #374151;
+        border-color: #3b82f6;
+    }
+
+    .button-group {
+        background: #2d2d2d;
+        border-color: #4b5563;
+    }
+
+    .alert-info {
+        background: #1e40af;
+        color: white;
+    }
+
+    .alert-success {
+        background: #065f46;
+        color: white;
+    }
+
+    .alert-warning {
+        background: #92400e;
+        color: white;
+    }
+
+    .alert-error {
+        background: #991b1b;
+        color: white;
+    }
+}
+
+/* Focus and accessibility improvements */
+.btn:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus,
+.step-indicator:focus {
+    outline: 2px solid #1976d2;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.form-step {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.form-step.active {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Loading state for form */
+.form-container.loading .form-step {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Validation styles */
+.form-group input.error,
+.form-group select.error,
+.form-group textarea.error {
+    border-color: #dc3545 !important;
+    background-color: #fff5f5 !important;
+}
+
+.form-group input.success,
+.form-group select.success,
+.form-group textarea.success {
+    border-color: #28a745 !important;
+    background-color: #f8fff8 !important;
+}
+
+/* Tooltip styles for help text */
+.form-group[data-tooltip] {
+    position: relative;
+}
+
+.form-group[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.form-group[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: #333;
+    z-index: 1000;
+}
+
+/* Subform Specific Styles */
+.promoter-subform-container {
+    margin-top: 20px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+    color: white;
+    padding: 15px 20px;
+    margin-bottom: 0;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-add-promoter {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-add-promoter:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.promoter-row {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.promoter-row:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+.promoter-row-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 15px 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.promoter-row-header h4 {
+    margin: 0;
+    color: #495057;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.btn-remove-promoter {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.btn-remove-promoter:hover {
+    background: linear-gradient(135deg, #c82333 0%, #a71e2a 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+/* Horizontal Scrollable Grid */
+.promoter-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    min-height: 140px;
+    scroll-behavior: smooth;
+    position: relative;
+    scrollbar-width: thin;
+    scrollbar-color: #4a90e2 #f1f1f1;
+}
+
+/* Webkit Scrollbar Styling */
+.promoter-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.promoter-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+    margin: 0 10px;
+}
+
+.promoter-grid::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #4a90e2, #357abd);
+    border-radius: 4px;
+    border: 1px solid #357abd;
+}
+
+.promoter-grid::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(90deg, #357abd, #2c5f94);
+}
+
+/* Form Group Styling for Horizontal Layout */
+.promoter-grid .form-group {
+    margin-bottom: 0;
+    min-width: 220px;
+    max-width: 280px;
+    flex-shrink: 0;
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    background: #fafbfc;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.promoter-grid .form-group:hover {
+    background: #f0f7ff;
+    border-color: #4a90e2;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(74, 144, 226, 0.15);
+}
+
+.promoter-grid .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #495057;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    background: #e9ecef;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-align: center;
+    border: 1px solid #ced4da;
+}
+
+.promoter-grid .form-group input,
+.promoter-grid .form-group select,
+.promoter-grid .form-group textarea {
+    width: 100%;
+    padding: 12px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    background: white;
+    min-height: 42px;
+    flex: 1;
+}
+
+.promoter-grid .form-group input:focus,
+.promoter-grid .form-group select:focus,
+.promoter-grid .form-group textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+    outline: none;
+    background: #ffffff;
+}
+
+.promoter-grid .form-group textarea {
+    resize: none;
+    min-height: 80px;
+    max-height: 80px;
+}
+
+.promoter-grid .form-group input[type="file"] {
+    padding: 8px;
+    background: #f8f9fa;
+    border: 2px dashed #ced4da;
+    font-size: 11px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+}
+
+/* Scroll Shadows */
+.promoter-grid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.9), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.promoter-grid::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.9), transparent);
+    pointer-events: none;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.promoter-grid.scrollable::before,
+.promoter-grid.scrollable::after {
+    opacity: 1;
+}
+
+/* Scroll Indicators */
+.promoter-grid[data-scroll="start"]::after {
+    opacity: 0;
+}
+
+.promoter-grid[data-scroll="end"]::before {
+    opacity: 0;
+}
+
+.promoter-grid[data-scroll="middle"]::before,
+.promoter-grid[data-scroll="middle"]::after {
+    opacity: 1;
+}
+
+/* Field Type Specific Styling */
+.promoter-grid .form-group[data-field-type="sr-no"] {
+    min-width: 120px;
+    max-width: 120px;
+}
+
+.promoter-grid .form-group[data-field-type="pan"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.promoter-grid .form-group[data-field-type="name"] {
+    min-width: 250px;
+    max-width: 300px;
+}
+
+.promoter-grid .form-group[data-field-type="address"] {
+    min-width: 300px;
+    max-width: 350px;
+}
+
+.promoter-grid .form-group[data-field-type="relationship"] {
+    min-width: 200px;
+    max-width: 220px;
+}
+
+.promoter-grid .form-group[data-field-type="pep"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+.promoter-grid .form-group[data-field-type="file"] {
+    min-width: 200px;
+    max-width: 220px;
+}
+
+.promoter-grid .form-group[data-field-type="din-uid"] {
+    min-width: 220px;
+    max-width: 240px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .promoter-grid .form-group {
+        min-width: 200px;
+        max-width: 220px;
+        padding: 12px;
+    }
+
+    .promoter-grid {
+        gap: 15px;
+        padding: 15px;
+        min-height: 130px;
+    }
+
+    .promoter-grid .form-group label {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .promoter-grid .form-group input,
+    .promoter-grid .form-group select,
+    .promoter-grid .form-group textarea {
+        font-size: 12px;
+        padding: 10px 8px;
+        min-height: 38px;
+    }
+}
+
+@media (max-width: 480px) {
+    .promoter-grid .form-group {
+        min-width: 180px;
+        max-width: 200px;
+        padding: 10px;
+    }
+
+    .promoter-grid {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .promoter-grid .form-group label {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+
+    .promoter-grid .form-group input,
+    .promoter-grid .form-group select,
+    .promoter-grid .form-group textarea {
+        font-size: 11px;
+        padding: 8px 6px;
+        min-height: 36px;
+    }
+
+    /* Smaller field widths for mobile */
+    .promoter-grid .form-group[data-field-type="sr-no"] {
+        min-width: 100px;
+        max-width: 100px;
+    }
+
+    .promoter-grid .form-group[data-field-type="name"],
+    .promoter-grid .form-group[data-field-type="address"] {
+        min-width: 200px;
+        max-width: 220px;
+    }
+}
+
+/* Smooth scrolling enhancement */
+.promoter-grid {
+    scroll-snap-type: x proximity;
+}
+
+.promoter-grid .form-group {
+    scroll-snap-align: start;
+}
+
+/* Loading state for subform */
+.promoter-row.loading .promoter-grid {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.promoter-row.loading .promoter-grid::before {
+    content: 'Loading...';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #666;
+    z-index: 10;
+}
+
+/* File info styling */
+.file-info {
+    margin-top: 5px;
+    padding: 5px 8px;
+    background: #e3f2fd;
+    border-radius: 4px;
+    font-size: 11px;
+    color: #1976d2;
+    border-left: 3px solid #2196f3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Empty state styling */
+.promoter-subform-container:empty::after {
+    content: "No promoter details added yet. Click 'ADD PROMOTER' to get started.";
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-style: italic;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Animation for adding new rows */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.promoter-row {
+    animation: slideInUp 0.3s ease-out;
+}
+
+/* UBO Subform Specific Styles */
+.ubo-subform-container {
+    margin-top: 20px;
+}
+
+#uboSubformContainer .promoter-row {
+    background: white;
+    border: 1px solid #e1e5e9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+#uboSubformContainer .promoter-row:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    transform: translateY(-2px);
+}
+
+#uboSubformContainer .promoter-row-header {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f3ff 100%);
+    border-bottom: 1px solid #cce7ff;
+}
+
+#uboSubformContainer .promoter-row-header h4 {
+    color: #2c5aa0;
+}
+
+#uboSubformContainer .btn-remove-promoter {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+#uboSubformContainer .btn-remove-promoter:hover {
+    background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+}
+
+/* UBO Field Type Specific Styling - Updated without file field */
+#uboSubformContainer .form-group[data-field-type="name"] {
+    min-width: 250px;
+    max-width: 300px;
+}
+
+#uboSubformContainer .form-group[data-field-type="dob"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+#uboSubformContainer .form-group[data-field-type="pan"] {
+    min-width: 180px;
+    max-width: 180px;
+}
+
+#uboSubformContainer .form-group[data-field-type="nationality"] {
+    min-width: 150px;
+    max-width: 150px;
+}
+
+#uboSubformContainer .form-group[data-field-type="holding"] {
+    min-width: 130px;
+    max-width: 130px;
+}
+
+/* UBO Empty state styling */
+#uboSubformContainer:empty::after {
+    content: "No UBO details added yet. Click 'ADD UBO' to get started.";
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    color: #6c757d;
+    font-style: italic;
+    background: #f8f9fa;
+    border: 2px dashed #dee2e6;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Enhanced validation styling */
+.form-group input.invalid,
+.form-group select.invalid,
+.form-group textarea.invalid {
+    border: 2px solid #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+    background-color: #fff5f5 !important;
+}
+
+.form-group input.invalid:focus,
+.form-group select.invalid:focus,
+.form-group textarea.invalid:focus {
+    border-color: #dc3545 !important;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25) !important;
+}
+
+/* Validation message styling */
+.validation-message {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Required field indicator enhancement */
+.required-field::after {
+    content: " *";
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Layout Heading Styles */
+.layout-heading {
+    margin-top: 20px;
+    /* padding: 20px; */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.layout-heading h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin: 0 0 10px 0;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
+}
+
+.layout-heading p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.95;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 300;
+}
+
+/* Animation for layout heading */
+.layout-heading.show {
+    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .layout-heading h2 {
+        font-size: 1.5rem;
+    }
+
+    .layout-heading p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Holder Section Styling */
+.holder-section {
+    margin-bottom: 30px;
+    border: 1px solid #e0e6ed;
+    border-radius: 12px;
+    background: #ffffff;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+}
+
+.holder-section:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.holder-section-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 18px 24px;
+    margin: 0;
+}
+
+.holder-section-header h4 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.holder-content {
+    padding: 30px;
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Photo Upload Area */
+.photo-upload-area {
+    flex: 0 0 220px;
+    min-width: 220px;
+}
+
+.photo-box {
+    width: 220px;
+    height: 280px;
+    border: 2px dashed #cbd5e0;
+    border-radius: 12px;
+    background: #fafbfc;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.photo-box:hover {
+    border-color: #667eea;
+    background: #f0f4ff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.photo-box.has-photo {
+    border-color: #48bb78;
+    border-style: solid;
+    background: white;
+}
+
+.photo-box-header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+    margin: -2px -2px 0 -2px;
+}
+
+.photo-preview {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    padding: 15px;
+}
+
+.photo-placeholder {
+    text-align: center;
+    color: #a0aec0;
+    font-size: 13px;
+    line-height: 1.5;
+    transition: all 0.3s ease;
+}
+
+.photo-box:hover .photo-placeholder {
+    color: #667eea;
+    transform: scale(1.05);
+}
+
+.photo-placeholder i {
+    font-size: 40px;
+    display: block;
+    margin-bottom: 12px;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.photo-box:hover .photo-placeholder i {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.photo-upload-input {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+}
+
+.photo-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 12px;
+    font-size: 11px;
+    text-align: center;
+    word-break: break-all;
+    line-height: 1.3;
+}
+
+.photo-info.success {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+}
+
+.remove-photo-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(239, 68, 68, 0.9);
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    font-weight: bold;
+}
+
+.photo-box.has-photo .remove-photo-btn {
+    display: flex;
+}
+
+.remove-photo-btn:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.4);
+}
+
+/* Holder Details Area */
+.holder-details {
+    flex: 1;
+    min-width: 350px;
+}
+
+.holder-details .form-table {
+    margin: 0;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+}
+
+.holder-details .form-group {
+    margin-bottom: 0;
+}
+
+.holder-details label {
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 14px;
+}
+
+.holder-details input {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+    background: #fafbfc;
+}
+
+.holder-details input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    background: white;
+}
+
+.holder-details input:hover {
+    border-color: #cbd5e0;
+    background: white;
+}
+
+/* Image Preview Styling */
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.photo-preview.has-image {
+    padding: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .holder-content {
+        flex-direction: column;
+        gap: 25px;
+        padding: 20px;
+    }
+
+    .photo-upload-area {
+        align-self: center;
+        flex: none;
+    }
+
+    .holder-details {
+        min-width: 100%;
+    }
+
+    .photo-box {
+        width: 200px;
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .holder-content {
+        padding: 15px;
+    }
+
+    .photo-box {
+        width: 180px;
+        height: 240px;
+    }
+
+    .holder-section-header {
+        padding: 15px 18px;
+    }
+
+    .holder-section-header h4 {
+        font-size: 15px;
+    }
+}
+
+/* Animation for section appearance */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.holder-section {
+    animation: slideInUp 0.4s ease forwards;
+}
+
+.holder-section:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.holder-section:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+.holder-section:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+/* Loading state for photos */
+.photo-box.loading {
+    pointer-events: none;
+}
+
+.photo-box.loading .photo-placeholder {
+    opacity: 0.5;
+}
+
+.photo-box.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #667eea;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Photo Upload Section Styling */
+.photo-instructions {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.photo-instructions h4 {
+    color: #495057;
+    margin: 0 0 15px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.photo-instructions ul {
+    margin: 0;
+    padding-left: 20px;
+    color: #6c757d;
+}
+
+.photo-instructions li {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+/* Checkbox Alignment and Positioning */
+.form-group input[type="checkbox"] {
+    width: auto !important;
+    height: auto !important;
+    margin-right: 8px;
+    margin-left: 0;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+/* Checkbox container styling */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.checkbox-container input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+}
+
+.checkbox-container label {
+    margin: 0;
+    line-height: 1.4;
+    cursor: pointer;
+    flex: 1;
+}
+
+/* For labels that contain checkboxes */
+label.checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+label.checkbox-label input[type="checkbox"] {
+    margin: 0;
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+/* Fix for form-group checkboxes */
+.form-group.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.form-group.checkbox-group input[type="checkbox"] {
+    margin-top: 3px;
+    order: -1;
+    /* Put checkbox first */
+}
+
+.form-group.checkbox-group label {
+    margin-bottom: 0;
+    flex: 1;
+    order: 1;
+    /* Put label after checkbox */
+}
+
+/* Enhanced checkbox styling */
+input[type="checkbox"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid #cbd5e0;
+    border-radius: 3px;
+    background: white;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+input[type="checkbox"]:hover {
+    border-color: #01c40b;
+}
+
+input[type="checkbox"]:checked {
+    background: #0324b6;
+    border-color: #0324b6;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+input[type="checkbox"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Enhanced checkbox styling for permanent address */
+.checkbox-group {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+    transition: all 0.2s ease;
+}
+
+.checkbox-group:hover {
+    background: #e3f2fd;
+    border-color: #2196f3;
+}
+
+.checkbox-group input[type="checkbox"] {
+    margin: 0;
+    margin-top: 2px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    margin: 0;
+    cursor: pointer;
+    font-weight: 500;
+    color: #495057;
+    flex: 1;
+    line-height: 1.4;
+}
+
+.checkbox-group input[type="checkbox"]:checked+label {
+    color: #0056b3;
+    font-weight: 600;
+}
+
+/* Visual feedback for auto-filled fields */
+.auto-filled {
+    background-color: #e7f3ff !important;
+    border-color: #2196f3 !important;
+    transition: all 0.3s ease;
+}
